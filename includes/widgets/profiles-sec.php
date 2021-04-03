@@ -91,7 +91,7 @@ class TP_profiles_sec extends WP_Widget{
                                     </div>
                                 </div>
                                 <div>
-                                    <a href="<?php echo $permalink ?>" class="heading_normal color_primary"><?php echo $title; ?></a>
+                                    <a href="<?php echo $permalink ?>" class="heading_normal tp_color_white"><?php echo $title; ?></a>
        
                                         <?php if(!empty($fb) || !empty($twitter) || !empty($insta)): ?>
                                             <div>
