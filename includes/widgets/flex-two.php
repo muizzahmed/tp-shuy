@@ -26,6 +26,7 @@ class TP_flex_two extends WP_Widget{
         $img_title = esc_html__(get_field('tp_l2_wid_img_tittle', 'widget_' . $widget_id), $GLOBALS['tp_trans_name'] );
         $img = esc_html__(get_field('tp_l2_wid_image', 'widget_' . $widget_id), $GLOBALS['tp_trans_name'] );
         $img_url = esc_url_raw( wp_get_attachment_image_url($img ,'large'));
+        $img_url_db = esc_html__(get_field('tp_l2_wid_image_url', 'widget_' . $widget_id), $GLOBALS['tp_trans_name'] );
         
         $bcg_color =  esc_html__(strtolower(get_field('tp_l2_wid_bcg_color', 'widget_' . $widget_id)), $GLOBALS['tp_trans_name']);
         $back_color_value = '';
@@ -44,7 +45,7 @@ class TP_flex_two extends WP_Widget{
            
             <section style="background-color:var(<?php echo $back_color_value ?>)" class='flew-two'>
                 <div>
-                    <div class="flex_img_a" style='background-image: url(<?php echo $img_url ?>)'>&nbsp;
+                    <div class="flex_img_a" style='background-image: url(<?php echo !empty($img_url) ? $img_url : $img_url_db ?>)'>&nbsp;
                       <h3 class="heading_normal capitalize color_white tp_back_color_prim"><?php echo $img_title ?></h3>
                     </div>
                 </div>

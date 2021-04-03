@@ -23,22 +23,28 @@ class TP_grid_images extends WP_Widget{
         $para = esc_html__(get_field('tp_l1_wid_paragraph', 'widget_' . $widget_id), $GLOBALS['tp_trans_name'] );
 
         $imgs = get_field('tp_l1_wid_images', 'widget_' . $widget_id);
-        //////////////// IMGS
-        $img_one = $imgs['tp_l1_wid_image1'];
-        $img_one_url = esc_url_raw(wp_get_attachment_image_url($img_one ,'large'));
-
-        $img_two = $imgs['tp_l1_wid_image2'];
-        $img_two_url = esc_url_raw(wp_get_attachment_image_url($img_two ,'large'));
-
-        $img_three = $imgs['tp_l1_wid_image3'];
-        $img_three_url = esc_url_raw(wp_get_attachment_image_url($img_three ,'large'));
-
-        $img_four = $imgs['tp_l1_wid_image4'];
-        $img_four_url = esc_url_raw(wp_get_attachment_image_url($img_four ,'large'));
-
-        $img_five = $imgs['tp_l1_wid_image5'];
-        $img_five_url = esc_url_raw(wp_get_attachment_image_url($img_five ,'large'));
-
+        
+        
+        if(!empty($imgs['tp_l1_wid_image1']) || !empty($imgs['tp_l1_wid_image2']) || !empty($imgs['tp_l1_wid_image3']) ){
+            
+            $img_one = $imgs['tp_l1_wid_image1'];
+            
+            $img_two = $imgs['tp_l1_wid_image2'];
+            
+            $img_three = $imgs['tp_l1_wid_image3'];
+            
+            $img_four = $imgs['tp_l1_wid_image4'];
+            
+            $img_five = $imgs['tp_l1_wid_image5'];
+            //////////////// IMGS
+            $img_one_url = esc_url_raw(wp_get_attachment_image_url($img_one ,'large'));
+            $img_two_url = esc_url_raw(wp_get_attachment_image_url($img_two ,'large'));
+            $img_three_url = esc_url_raw(wp_get_attachment_image_url($img_three ,'large'));
+            $img_four_url = esc_url_raw(wp_get_attachment_image_url($img_four ,'large'));
+            $img_five_url = esc_url_raw(wp_get_attachment_image_url($img_five ,'large'));
+            
+        }
+        
         $bcg_color =  esc_html__(strtolower(get_field('tp_blogs_wid_bcg_color', 'widget_' . $widget_id)), $GLOBALS['tp_trans_name']);
         $back_color_value = '';
         
